@@ -94,15 +94,43 @@ Exemple:
         True True True
 """
 
-# Write class DatabaseConnector here
+class DatabaseConnector():
 
-# Write class SQLDatabase here
-
-
-# Write class PostgresDatabase here
+    def __init__(self):
+        self.db_type = None
 
 
-# Write class RedshiftDatabase here
+    def connect(self, db_type):
+        self.db_type= db_type
+        self.db_type.connect()
+
+        
+
+class SQLDatabase():
+    def __init__(self) -> None:
+        self.connected = False
+
+
+    def connect(self) -> None:
+        self.connected= True
+
+
+
+class PostgresDatabase():
+    def __init__(self) -> None:
+        self.connected = False
+
+
+    def connect(self) -> None:
+        self.connected= True
+
+class RedshiftDatabase():
+    def __init__(self) -> None:
+        self.connected = False 
+
+
+    def connect(self) -> None:
+        self.connected= True
 
 
 # Por la propia naturaleza del ejercicios no se puede probar imprimiendo por pantalla, 
